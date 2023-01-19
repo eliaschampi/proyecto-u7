@@ -2,6 +2,12 @@
 
 Crud, express, prisma, buenas practicas y codigo limpio. Proyecto correspondiente a la unidad 7
 
+# Integrantes
+
+Elias Champi
+Alvaro Chancafe
+Emily Alva
+
 # Pasos para actualizar la rama local
 
 
