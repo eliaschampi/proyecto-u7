@@ -5,7 +5,9 @@ Crud, express, prisma, buenas practicas y codigo limpio. Proyecto correspondient
 # Integrantes
 
 Elias Champi
+
 Alvaro Chancafe
+
 Emily Alva
 
 # Pasos para actualizar la rama local
