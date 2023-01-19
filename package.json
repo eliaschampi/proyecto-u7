@@ -2,13 +2,13 @@
   "name": "proyecto-u7",
   "version": "1.0.0",
   "description": "Crud, express, prisma, buenas practicas y codigo limpio. Proyecto correspondiente a la unidad 7",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node  index.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eliaschampi/proyecto-u7.git"
+    "url": "https://github.com/eliaschampi/proyecto-u7.git"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/eliaschampi/proyecto-u7/issues"
   },
-  "homepage": "https://github.com/eliaschampi/proyecto-u7#readme"
+  "homepage": "https://github.com/eliaschampi/proyecto-u7#readme",
+  "devDependencies": {
+    "prisma": "^4.9.0",
+    "typescript": "^4.9.4"
+  }
 }
