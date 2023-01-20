@@ -15,10 +15,12 @@ model User {
   name         String
   email        String     @unique
   password     String
-  last_session DateTime
-  update_at    DateTime
+  last_session DateTime   @default(now())
+  updated_at   DateTime   @updatedAt
   date_born    DateTime
   playlists    Playlist[]
+
+  @@map("users")
 }
 
 model PlaylistSong {
@@ -27,6 +29,8 @@ model PlaylistSong {
   playlistId Int
   song       Song     @relation(fields: [songId], references: [id])
   songId     Int
+
+  @@map("playlist_song")
 }
 
 model Playlist {
@@ -35,9 +39,9 @@ model Playlist {
   userId Int
   user   User           @relation(fields: [userId], references: [id])
   songs  PlaylistSong[]
+
+  @@map("playlists")
 }
-
-
 
 model Song {
   id        Int            @id @default(autoincrement())
@@ -48,4 +52,6 @@ model Song {
   genre     String
   duration  Int
   playlists PlaylistSong[]
+
+  @@map("songs")
 }
