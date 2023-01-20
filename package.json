@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/eliaschampi/proyecto-u7.git"
   },
+  "prisma": {
+    "schema": "./prisma/schema.prisma"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
