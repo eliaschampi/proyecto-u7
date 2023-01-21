@@ -1,11 +1,14 @@
-
 import express from "express";
 import cors from "cors";
 import { main } from "./src/app";
 import MPrisma from "./src/core/PrismaSingleton";
+import { config } from "dotenv";
+
+config();
+
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 app.use(cors({ origin: "*" }));
 
 app.use(
@@ -17,8 +20,8 @@ app.use(
 app.use(express.json());
 
 main(app)
-  .catch((e) => console.error(e))
-  .finally(async () => await MPrisma.instance.$disconnect())
+    .catch((e) => console.error(e))
+    .finally(async () => await MPrisma.instance.$disconnect())
 
 app.listen(port, () => {
     console.log(`Yeeee my server running http://127.0.0.1:${port}`);

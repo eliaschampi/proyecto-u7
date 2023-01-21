@@ -11,7 +11,7 @@ class Routerify {
         })
         
         // user
-        router.use("/user", userRoute);
+        router.use("/users", userRoute);
 
         // song
         // song routes here

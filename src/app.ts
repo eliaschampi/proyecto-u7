@@ -1,4 +1,3 @@
-
 import { Express } from 'express';
 import Routerify from './route/Routerify';
 
