@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { login } from "../controller/UserController";
 import userRoute from "./user";
 import songRouter from "./song";
 
@@ -13,6 +14,7 @@ class Routerify {
         
         // user
         router.use("/users", userRoute);
+        router.post("/login", login);
 
         // song
         // song routes here
