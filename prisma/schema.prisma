@@ -23,22 +23,13 @@ model User {
   @@map("users")
 }
 
-model PlaylistSong {
-  id         Int      @id @default(autoincrement())
-  playlist   Playlist @relation(fields: [playlistId], references: [id])
-  playlistId Int
-  song       Song     @relation(fields: [songId], references: [id])
-  songId     Int
-
-  @@map("playlist_song")
-}
-
 model Playlist {
   id     Int            @id @default(autoincrement())
   name   String
   userId Int
   user   User           @relation(fields: [userId], references: [id])
-  songs  PlaylistSong[]
+  songId Int
+  song   Song           @relation(fields: [songId], references: [id])
 
   @@map("playlists")
 }
@@ -51,7 +42,8 @@ model Song {
   year      Int
   genre     String
   duration  Int
-  playlists PlaylistSong[]
+  state     Boolean
+  playlists Playlist[]
 
   @@map("songs")
 }

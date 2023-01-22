@@ -8,5 +8,6 @@ export async function main(app: Express) {
     const routes = routefy.main();
 
     app.use("/api/v1", routes);
+
 }
 
