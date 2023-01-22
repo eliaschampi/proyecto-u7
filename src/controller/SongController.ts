@@ -26,3 +26,30 @@ export const createSongs = async (req: Request, res: Response): Promise<void> =>
     res.status(500).json({ ok: false, message: error });
   }
 };
+//listar por id
+export const getSongById = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const song = await MPrisma.instance.song.findUnique({
+      where: {
+        id: parseInt(req.params.id)
+      },
+    })
+
+    if (!song) {
+      res.status(404).json({
+        ok: false,
+        message: "Canción no encontrada",
+      });
+    } else {
+      res.status(200).json({
+        ok: true,
+        data: song,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      ok: false,
+      message: error,
+    });
+  }
+};
