@@ -2,6 +2,7 @@ import { Router } from "express";
 import { login } from "../controller/UserController";
 import userRoute from "./user";
 import songRouter from "./song";
+import verifyTokenMidleware from "../midlewares/verifyTokenMidleware";
 
 class Routerify {
 
@@ -13,12 +14,12 @@ class Routerify {
         })
         
         // user
-        router.use("/users", userRoute);
-        router.post("/login", login);
+        router.post("/users/login", login);
+        router.use("/users", verifyTokenMidleware, userRoute);
 
         // song
         // song routes here
-        router.use("/songs", songRouter);
+        router.use("/songs", verifyTokenMidleware, songRouter);
 
         // playlist
         // playlist routes here

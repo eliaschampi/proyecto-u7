@@ -1,4 +1,4 @@
-# proyecto-unidad 7
+# Playmia unidad 7
 
 Crud, express, prisma, buenas practicas y codigo limpio. Proyecto correspondiente a la unidad 7
 
@@ -21,6 +21,66 @@ git checkout turama
 git merge main
 ```
 
+# Pasos correr el servidor
+
+Luego de hacer un 
+
+```sh
+git clone git@github.com:eliaschampi/proyecto-u7.git
+
+```
+ejecute los siguientes comandos
+
+```sh
+npm install
+npx prisma migrate dev --name init
+touch .env
+```
+
+Copie el contenido de .env-example a .env
+luego ejecute
+```sh
+npm run dev
+```
+
+# Endpoint disponibles
+
+
+```sh
+// para landing page
+http://127.0.0.1:8000/
+
+// user get
+http://127.0.0.1:8000/api/v1/users
+
+// user post
+http://127.0.0.1:8000/api/v1/users
+
+// login
+http://127.0.0.1:8000/api/v1/users/login
+
+// song get all
+http://127.0.0.1:8000/api/v1/songs
+
+// song get by id
+http://127.0.0.1:8000/api/v1/songs/:id
+
+// playlist get with relations
+http://127.0.0.1:8000/api/v1/playlists
+
+// playlist post
+http://127.0.0.1:8000/api/v1/playlists
+```
+
+>**Importante: Las rutas excepto login requieren un token**
+
+dicho token se genera al hacer login y puedes pasar al header 
+
+```
+headers: {
+    "authorization": "token..."
+}
+```
 # Pasos para subir y hacer pull request
 
 
@@ -32,6 +92,7 @@ git push origin turama
 ```
 
 > Despues debe crear pull request
+> pull request tiene una estructura, verifique pull request anteriores
 
 
 ## Nota

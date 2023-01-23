@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import MPrisma from "../core/PrismaSingleton";
 import bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 
 export const fetchUsers = async (req: Request, res: Response) => {
@@ -16,15 +16,14 @@ export const fetchUsers = async (req: Request, res: Response) => {
 
 export const createUsers = async (req: Request, res: Response) => {
     try {
-        const { name, email, password, date_born } = req.body;
+        let { password, date_born } = req.body;
+        password = bcrypt.hashSync(password, 10);
+        date_born = new Date(date_born);
+        const data: any = req.body;
+        data.password = bcrypt.hashSync(password, 10);
+        data.date_born = new Date(date_born);
         await MPrisma.instance.user.create({
-            data: {
-                name: name,
-                email: email,
-                password: bcrypt.hashSync(password, 10),
-                date_born: new Date(date_born),
-            }
-
+            data
         });
         res.status(201).json({ ok: true, message: "Usuario creado correctamente" });
     }

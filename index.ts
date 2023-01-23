@@ -24,7 +24,7 @@ main(app)
     .finally(async () => await MPrisma.instance.$disconnect())
 
 app.listen(port, () => {
-    console.log(`Yeeee my server running http://127.0.0.1:${port}`);
+    console.log(`Server running http://127.0.0.1:${port}`);
 });
 
 export default app;
