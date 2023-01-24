@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Crud, express, prisma, buenas practicas y codigo limpio. Proyecto correspondiente a la unidad 7",
   "scripts": {
-    "dev": "ts-node index.ts"
+    "dev": "ts-node index.ts",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/eliaschampi/proyecto-u7#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
+    "prettier": "^2.8.3",
     "prisma": "^4.9.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"

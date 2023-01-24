@@ -16,10 +16,8 @@
         <header id="header">
             <div class="holder">
                 <div class="logo-wrapper clearfix">
-                    <img src="logo.png"
-                        id="header-img" class="header-img" width="150" height="50"></img>
-                    <img src="mini.png" height="50"
-                        class="header-img-m"></img>
+                    <img src="logo.png" id="header-img" class="header-img" width="150" height="50"></img>
+                    <img src="mini.png" height="50" class="header-img-m"></img>
                 </div>
 
                 <nav id="nav-bar" class="nav-bar">
@@ -36,18 +34,123 @@
             <section id="about" class="section">
                 <div class="holder">
                     <div class="title">Acerca del API</div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut mollitia vitae sit dolorum rerum
-                        quis amet incidunt ab consequatur nisi commodi, tempora aliquid beatae ipsam? Consequatur libero
-                        voluptatem laudantium numquam!
-                    </p>
+                    <md-block>
+                        # Playmia unidad 7
+
+                        Crud, express, prisma, buenas practicas y codigo limpio. Proyecto correspondiente a la unidad 7
+
+                        # Integrantes
+
+                        Elias Champi
+
+                        Alvaro Chancafe
+
+                        Emily Alva
+
+                        # Pasos para actualizar la rama local
+
+
+                        ```sh
+                        git checkout main
+                        git fetch origin main
+                        git merge origin/main
+                        git checkout turama
+                        git merge main
+                        ```
+
+                        # Pasos correr el servidor
+
+                        Luego de hacer un
+
+                        ```sh
+                        git clone git@github.com:eliaschampi/proyecto-u7.git
+
+                        ```
+                        ejecute los siguientes comandos
+
+                        ```sh
+                        npm install
+                        npx prisma migrate dev --name init
+                        touch .env
+                        ```
+
+                        Copie el contenido de .env-example a .env
+                        luego ejecute
+                        ```sh
+                        npm run dev
+                        ```
+
+                        # Endpoint disponibles
+
+
+                        ```sh
+                        // para landing page
+                        http://127.0.0.1:8000/
+
+                        // user get
+                        http://127.0.0.1:8000/api/v1/users
+
+                        // user post
+                        http://127.0.0.1:8000/api/v1/users
+
+                        // login
+                        http://127.0.0.1:8000/api/v1/users/login
+
+                        // song get all
+                        http://127.0.0.1:8000/api/v1/songs
+
+                        // song get by id
+                        http://127.0.0.1:8000/api/v1/songs/:id
+
+                        // playlist get with relations
+                        http://127.0.0.1:8000/api/v1/playlists
+
+                        // playlist post
+                        http://127.0.0.1:8000/api/v1/playlists
+                        ```
+
+                        >**Importante: Las rutas excepto login requieren un token**
+
+                        dicho token se genera al hacer login y puedes pasar al header
+
+                        ```
+                        headers: {
+                        "authorization": "token..."
+                        }
+                        ```
+                        # Pasos para subir y hacer pull request
+
+
+                        ```sh
+                        // estando en tus rama
+                        git add .
+                        git commit -m "mensaje"
+                        git push origin turama
+                        ```
+
+                        > Despues debe crear pull request
+                        > pull request tiene una estructura, verifique pull request anteriores
+
+
+                        ## Nota
+
+                        Este repositorio y su contenido se proporcionan "tal cual" y sin garantía de ningún tipo, ya sea
+                        expresa o implícita. Utilice bajo su propio riesgo.
+
+                        ## Contribuciones
+                        Este repositorio está abierto a contribuciones de la comunidad. Si desea contribuir, por favor
+                        envíe una solicitud de pull con sus cambios. Asegúrese
+                        de seguir nuestras guías de estilo y de documentar adecuadamente sus cambios. Si encuentra algún
+                        error o tiene sugerencias para mejorar la función, por favor abra un issue para discutirlo.
+
+                    </md-block>
                 </div>
             </section>
             <section id="how-it-works" class="section">
                 <div class="holder">
                     <div class="title">Tutorial</div>
-                    <iframe id="video" width="100%" height="500" src="https://www.youtube.com/watch?v=MW1uzME_XGQ" frameborder="0"
-                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe id="video" width="100%" height="500" src="https://www.youtube.com/watch?v=MW1uzME_XGQ"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </section>
             <section id="plans" class="section">
@@ -88,6 +191,7 @@
     </section>
     </main>
     </div>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </body>
 
 </html>
