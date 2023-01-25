@@ -4,11 +4,12 @@ import {
   createPlaylist,
   addToPlaylist,
 } from "../controller/PlaylistController";
+import verifyTokenMidleware from "../midlewares/verifyTokenMidleware";
 
 const playlistRoute: Router = Router();
 
 playlistRoute.get("/", getPlaylistAll);
-playlistRoute.post("/", createPlaylist);
-playlistRoute.post("/add", addToPlaylist);
+playlistRoute.post("/", verifyTokenMidleware, createPlaylist);
+playlistRoute.post("/add", verifyTokenMidleware, addToPlaylist);
 
 export default playlistRoute;

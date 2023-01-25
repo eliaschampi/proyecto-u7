@@ -47,29 +47,59 @@ npm run dev
 
 
 ```sh
-// para landing page
-http://127.0.0.1:8000/
+CREACION USER:   (POST)
+http://localhost:5000/api/v1/users
+No Authorization
 
-// user get
-http://127.0.0.1:8000/api/v1/users
 
-// user post
-http://127.0.0.1:8000/api/v1/users
+CONSEGUIR USUARIOS    (GET)
+http://localhost:5000/api/v1/users
+No Authorization
 
-// login
-http://127.0.0.1:8000/api/v1/users/login
 
-// song get all
-http://127.0.0.1:8000/api/v1/songs
+LOGIN USER     (POST)
+http://localhost:5000/api/v1/users/login
+No Authorization
 
-// song get by id
-http://127.0.0.1:8000/api/v1/songs/:id
 
-// playlist get with relations
-http://127.0.0.1:8000/api/v1/playlists
+CREAR CANCION PUBLICA   (POST)
+http://localhost:5000/api/v1/songs
+Con Authorization
 
-// playlist post
-http://127.0.0.1:8000/api/v1/playlists
+
+CREAR CANCION PRIVADA   (POST)
+http://localhost:5000/api/v1/songs
+Con Authorization
+
+
+CONSEGUIR CANCIONES PUBLICAS   (GET)
+http://localhost:5000/api/v1/songs
+Sin Authorization
+
+
+CONSEGUIR CANCIONES PRIVADAS   (GET)
+http://localhost:5000/api/v1/songs/privates
+Con Authorization
+
+
+CONSEGUIR CANCIONES POR ID  (GET)
+http://localhost:5000/api/v1/songs/1
+Con Authorization
+
+
+CREAR PLAYLIST    (POST)
+http://localhost:5000/api/v1/playlist
+Con Authorization
+
+
+CONSEGUIR PLAYLIST   (GET)
+http://localhost:5000/api/v1/playlist
+Sin Authorization
+
+
+AGREGAR CANCIONES A PLAYLIST   (POST)
+http://localhost:5000/api/v1/playlist/add
+Con Authorization
 ```
 
 >**Importante: Las rutas excepto login requieren un token**
