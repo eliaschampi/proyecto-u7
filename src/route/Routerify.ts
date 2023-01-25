@@ -15,7 +15,7 @@ class Routerify {
 
     // user
     router.post("/users/login", login);
-    router.use("/users", verifyTokenMidleware, userRoute);
+    router.use("/users", userRoute);
 
     // song
     // song routes here
