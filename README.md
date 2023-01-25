@@ -102,7 +102,6 @@ http://localhost:5000/api/v1/playlist/add
 Con Authorization
 ```
 
->**Importante: Las rutas excepto login requieren un token**
 
 dicho token se genera al hacer login y puedes pasar al header 
 
