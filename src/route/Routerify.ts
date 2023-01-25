@@ -23,7 +23,7 @@ class Routerify {
 
     // playlist
     // playlist routes here
-    router.use("/playlists", playlistRoute);
+    router.use("/playlist", playlistRoute);
 
     return router;
   }
