@@ -2,7 +2,6 @@ import { Router } from "express";
 import { login } from "../controller/UserController";
 import userRoute from "./user";
 import songRouter from "./song";
-import verifyTokenMidleware from "../midlewares/verifyTokenMidleware";
 import playlistRoute from "./playlist";
 
 class Routerify {
